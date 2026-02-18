@@ -13,6 +13,8 @@ export const siteConfig = {
 
   links: {
     instagram: "https://instagram.com/wrapsnroll",
+    facebook: "https://facebook.com/wrapsnroll",
+    twitter: "https://twitter.com/wrapsnroll",
   },
   contact: {
     display: "+1 (905) 555-0123", // How it looks on screen
