@@ -39,7 +39,7 @@ export default function Navbar() {
         
         {/* LOGO & NAME */}
         <Link href="/" className="z-[1001] flex items-center gap-3 group" onClick={() => setIsOpen(false)}>
-          <div className="relative h-16 w-16 rounded-full overflow-hidden border-2 border-orange-600 transition-transform duration-300 group-hover:rotate-20"> 
+          <div className="relative h-10 w-10 rounded-full overflow-hidden border-2 border-orange-600 transition-transform duration-300 group-hover:rotate-20"> 
             <Image src="/logo.png" alt="Logo" fill className="object-contain" priority />
           </div>
           <span className="text-xl font-extrabold tracking-tighter text-gray-900 group-hover:text-orange-600 transition-colors">
