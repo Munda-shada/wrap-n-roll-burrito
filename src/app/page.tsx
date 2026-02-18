@@ -1,6 +1,7 @@
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import menuData from "@/data/menu.json";
+import Image from 'next/image';
 
 export default function Home() {
   const featuredItems = menuData.categories[0].items.slice(0, 4);
@@ -12,10 +13,12 @@ export default function Home() {
         {/* Background Image with Parallax-like feel */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40 z-10" /> {/* Dark Overlay */}
-          <img 
-            src="https://images.unsplash.com/photo-1599974590211-59cf1b290c12?q=80&w=2000" 
+          <Image 
+            src="/image/hero-burritos.png" 
             alt="Delicious Burrito"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            priority
           />
         </div>
 
@@ -102,7 +105,7 @@ export default function Home() {
           {/* Card 1 */}
           <div className="group cursor-pointer">
             <div className="h-[450px] overflow-hidden rounded-3xl bg-gray-100 mb-6">
-              <img src="https://images.unsplash.com/photo-1626700051175-656868edfeb0?q=80&w=1000" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Wraps" />
+              <img src="/image/featured-burrito.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Wraps" />
             </div>
             <h3 className="text-2xl font-black uppercase italic">Signature Wraps</h3>
             <p className="text-gray-500 mt-2">Packed with protein and secret spices.</p>
@@ -110,7 +113,7 @@ export default function Home() {
           {/* Card 2 */}
           <div className="group cursor-pointer md:mt-12">
             <div className="h-[450px] overflow-hidden rounded-3xl bg-gray-100 mb-6">
-              <img src="https://images.unsplash.com/photo-1534352956274-469335a40974?q=80&w=1000" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Bowls" />
+              <img src="/image/featured-burrito.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Bowls" />
             </div>
             <h3 className="text-2xl font-black uppercase italic">Loaded Bowls</h3>
             <p className="text-gray-500 mt-2">Everything you love, without the wrap.</p>
@@ -127,16 +130,27 @@ export default function Home() {
       </section>
 
       {/* 3. "BIG CRAVING" CALLOUT */}
-      <section className="bg-orange-600 py-20 text-center text-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-8">
-            Stop Reading, Start Eating.
-          </h2>
-          <Link href="/order" className="inline-block bg-black text-white px-12 py-5 rounded-full font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-            Order for Pickup
-          </Link>
-        </div>
-      </section>
+      <section 
+                className="relative py-24 bg-gray-900 text-white flex flex-col items-center justify-center text-center overflow-hidden"
+                style={{ backgroundImage: "url('/image/food-pattern-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+            >
+                <div className="absolute inset-0 bg-black/70 z-0"></div> {/* Dark overlay for text contrast */}
+                <div className="relative z-10 max-w-2xl mx-auto px-6">
+                    <h2 className="text-5xl font-extrabold uppercase italic leading-tight tracking-tighter drop-shadow-lg">
+                        Ready to <span className="text-orange-600">Roll?</span>
+                    </h2>
+                    <p className="mt-6 text-xl font-medium drop-shadow">
+                        Experience the freshest ingredients and boldest flavors, delivered right to your door or ready for pickup.
+                    </p>
+                    <Link
+                        href="/order"
+                        className="mt-10 inline-flex items-center gap-3 bg-orange-600 text-white px-10 py-5 rounded-full font-black uppercase tracking-widest hover:bg-white hover:text-orange-600 transition-all text-lg shadow-lg"
+                    >
+                        Order Your Burrito Now!
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </Link>
+                </div>
+            </section>
 <section className="py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-12 items-center text-center md:text-left">
