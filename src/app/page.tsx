@@ -114,7 +114,7 @@ export default function Home() {
                 
                 <div className="mt-8 pt-6 border-t border-gray-50 flex justify-between items-center">
                   <span className="text-2xl font-black text-orange-600">
-                    {item.options[1].price} {/* Showing the 'Full' price */}
+                    {item.calories || "N/A"} {/* Showing the 'Full' price */}
                   </span>
                   <Link href="/order" className="bg-gray-900 text-white p-3 rounded-full group-hover:bg-orange-600 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
