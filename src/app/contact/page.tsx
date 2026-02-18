@@ -106,7 +106,7 @@ export default function ContactPage() {
 
               <button type="submit" className="w-full bg-[#25D366] text-white py-4 rounded-full font-black uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2">
               <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.48 5.228 3.48 8.404c0 6.556-5.332 11.888-11.888 11.888-2.013 0-3.987-.512-5.728-1.487l-6.26 1.712zm6.106-4.221l.44.262c1.46.868 3.141 1.326 4.864 1.326 5.201 0 9.432-4.231 9.432-9.432s-4.231-9.432-9.432-9.432-9.432 4.231-9.432 9.432c0 1.916.58 3.788 1.678 5.372l.291.423-1.002 3.655 3.731-.975z"/></svg>
-              Chat on WhatsApp
+              <span className="truncate">Chat on WhatsApp</span>
             </button>
             </form>
           ) : (
