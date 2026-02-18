@@ -13,6 +13,7 @@ export default function MenuPage() {
   
   const mobileNavRef = useRef<HTMLDivElement>(null); // Specific ref for mobile slider
   const isManualScrolling = useRef(false);
+  const visibleSections = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 600);
@@ -43,16 +44,34 @@ export default function MenuPage() {
   useEffect(() => {
     if (isLoading) return;
 
+    visibleSections.current.clear();
+
     const observer = new IntersectionObserver((entries) => {
       if (isManualScrolling.current) return;
+      
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setActiveCategory(entry.target.id);
+          visibleSections.current.add(entry.target.id);
+        } else {
+          visibleSections.current.delete(entry.target.id);
         }
       });
+
+      // Find the active category by checking which visible section is last in the list.
+      // This handles both scrolling down (new one enters) and scrolling up (bottom one leaves, previous one takes over).
+      let activeId = "";
+      for (const cat of menuData.categories) {
+        if (visibleSections.current.has(cat.id)) {
+          activeId = cat.id;
+        }
+      }
+      
+      if (activeId) {
+        setActiveCategory(activeId);
+      }
     }, { 
-      threshold: 0.1, 
-      rootMargin: "-20% 0px -60% 0px" 
+      threshold: 0, 
+      rootMargin: "-10% 0px -80% 0px" 
     });
 
     menuData.categories.forEach((cat) => {
@@ -125,9 +144,9 @@ export default function MenuPage() {
         <div className="px-6 py-4">
           <div className="flex items-center justify-between mb-4">
             <h1 className="text-2xl font-black uppercase italic">Menu</h1>
-            <div className="flex gap-2">
-              {FILTERS.slice(0, 3).map(f => (
-                <button key={f} onClick={() => setActiveFilter(f)} className={`text-[8px] font-bold uppercase px-3 py-1 rounded-full border ${activeFilter === f ? 'bg-orange-600 text-white border-orange-600' : 'text-gray-400 border-gray-100'}`}>{f}</button>
+            <div className="flex gap-2 overflow-x-auto no-scrollbar max-w-[70%]">
+              {FILTERS.map(f => (
+                <button key={f} onClick={() => setActiveFilter(f)} className={`text-[8px] font-bold uppercase px-3 py-1 rounded-full border whitespace-nowrap flex-shrink-0 ${activeFilter === f ? 'bg-orange-600 text-white border-orange-600' : 'text-gray-400 border-gray-100'}`}>{f}</button>
               ))}
             </div>
           </div>
@@ -206,7 +225,9 @@ export default function MenuPage() {
                           <h3 className={`font-black uppercase tracking-tight mb-2 text-gray-900 ${isTopping ? 'text-xs' : 'text-2xl'}`}>{item.name}</h3>
                           {!isTopping && <p className="text-gray-500 text-sm leading-relaxed mb-6 font-medium">{item.desc}</p>}
                           <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-50">
-                            <span className="text-[8px] font-black px-2 py-1 bg-black text-white rounded uppercase">{item.tags[0]}</span>
+                            <div className="flex flex-wrap gap-1">
+                              {item.tags.map((tag: string, i: number) => <span key={i} className="text-[8px] font-black px-2 py-1 bg-black text-white rounded uppercase">{tag}</span>)}
+                            </div>
                             <span className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">{item.calories}</span>
                           </div>
                         </div>

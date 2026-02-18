@@ -1,94 +1,147 @@
 {
   "categories": [
     {
-      "id": "burritos-bowls",
-      "name": "Burritos & Bowls",
+      "id": "burritos",
+      "name": "Burritos",
       "items": [
-        { "name": "Ground Beef", "desc": "Lean ground beef seasoned with signature Mexican spices.", "calories": "720 - 1040 Cal", "tags": ["Meat"], "image": "/image/menu/ground-beef.jpg" },
-        { "name": "Grilled Chicken", "desc": "Freshly grilled marinated chicken breast.", "calories": "650 - 980 Cal", "tags": ["Meat"], "image": "/image/menu/grilled-chicken.jpg" },
-        { "name": "Barbacoa", "desc": "Slow-cooked, tender shredded beef with smoky notes.", "calories": "680 - 1010 Cal", "tags": ["Meat"], "image": "/image/menu/barbacoa.jpg" },
-        { "name": "Steak", "desc": "Premium hand-cut steak grilled to order.", "calories": "700 - 1030 Cal", "tags": ["Meat"], "image": "/image/menu/steak.jpg" },
-        { "name": "Pulled Pork (Carnitas)", "desc": "Traditional slow-roasted seasoned pork.", "calories": "710 - 1040 Cal", "tags": ["Meat"], "image": "/image/menu/pulled-pork.jpg" },
-        { "name": "Veggie Guac", "desc": "Fresh hand-smashed guacamole with choice of beans and rice.", "calories": "510 - 840 Cal", "tags": ["Veggie", "Vegan"], "image": "/image/menu/veggie-guac.jpg" }
+        { "name": "Classic Chicken Burrito", "desc": "Marinated for 12-24 hours in our signature spice blend, lime, and garlic.", "calories": "480 - 900 Cal", "tags": ["Meat"], "image": "/image/menu/chicken-burrito.jpg" },
+        { "name": "Ground Beef Burrito", "desc": "Slow-cooked ground beef with premium spices, yellow onions, and green peppers.", "calories": "570 - 900 Cal", "tags": ["Meat"], "image": "/image/menu/beef-burrito.jpg" },
+        { "name": "Spicy Habanero Chicken Burrito", "desc": "Marinated in our secret blend of fiery habanero spices.", "calories": "550 - 870 Cal", "tags": ["Meat", "Spicy"], "image": "/image/menu/habanero-burrito.jpg" },
+        { "name": "Jerk Chicken Burrito", "desc": "Tantalizing fusion of Caribbean spices with our bold Jerk Chicken.", "calories": "480 - 900 Cal", "tags": ["Meat", "Spicy"], "image": "/image/menu/jerk-burrito.jpg" },
+        { "name": "Butter Chicken Burrito", "desc": "House-cooked chicken tossed in an aromatic, rich butter chicken sauce.", "calories": "550 - 870 Cal", "tags": ["Meat"], "image": "/image/menu/butter-chicken-burrito.jpg" },
+        { "name": "Spicy Buffalo Chicken Burrito", "desc": "Crispy deep-fried chicken tossed in warm hot sauce.", "calories": "700 - 1060 Cal", "tags": ["Meat", "Spicy"], "image": "/image/menu/buffalo-burrito.jpg" },
+        { "name": "Steak Burrito", "desc": "Tender pieces of juicy steak with a peppery kick.", "calories": "570 - 900 Cal", "tags": ["Meat"], "image": "/image/menu/steak-burrito.jpg" },
+        { "name": "Barbacoa Burrito", "desc": "Slow-cooked, tender shredded beef with smoky notes.", "calories": "680 - 1010 Cal", "tags": ["Meat"], "image": "/image/menu/barbacoa-burrito.jpg" },
+        { "name": "Meat Lover Burrito", "desc": "A tantalizing blend of juicy chicken, savory ground beef, and succulent steak.", "calories": "860 - 1020 Cal", "tags": ["Meat"], "image": "/image/menu/meat-lover-burrito.jpg" },
+        { "name": "Garlic Shrimp Burrito", "desc": "Shrimp cooked in garlic butter, herbs, and lime for a zesty delight.", "calories": "570 - 860 Cal", "tags": ["Meat"], "image": "/image/menu/shrimp-burrito.jpg" },
+        { "name": "KaPow Shrimp Burrito", "desc": "Beer-battered crispy shrimp drenched in signature sweet & spicy Kapow sauce.", "calories": "570 - 860 Cal", "tags": ["Meat", "Spicy"], "image": "/image/menu/kapow-burrito.jpg" },
+        { "name": "Basa Fish Burrito", "desc": "Pan-cooked Basa fillets with garlic butter, lime, and herbs.", "calories": "630 - 1020 Cal", "tags": ["Meat"], "image": "/image/menu/basa-burrito.jpg" },
+        { "name": "Veggie Guac Burrito", "desc": "Fresh hand-smashed guacamole with your choice of beans, rice, and fresh veggies.", "calories": "480 - 830 Cal", "tags": ["Veggie", "Vegan"], "image": "/image/menu/veggie-burrito.jpg" }
+      ]
+    },
+    {
+      "id": "burrito-bowls",
+      "name": "Burrito Bowls",
+      "items": [
+        { "name": "Classic Chicken Bowl", "desc": "Signature marinated chicken served over rice and beans with fresh toppings.", "calories": "330 - 750 Cal", "tags": ["Meat"], "image": "/image/menu/chicken-bowl.jpg" },
+        { "name": "Ground Beef Bowl", "desc": "Slow-cooked seasoned ground beef bowl.", "calories": "440 - 820 Cal", "tags": ["Meat"], "image": "/image/menu/beef-bowl.jpg" },
+        { "name": "Spicy Habanero Bowl", "desc": "Fiery habanero chicken served naked in a bowl.", "calories": "340 - 570 Cal", "tags": ["Meat", "Spicy"], "image": "/image/menu/habanero-bowl.jpg" },
+        { "name": "Jerk Chicken Bowl", "desc": "Caribbean spiced Jerk Chicken served over your choice of rice.", "calories": "370 - 620 Cal", "tags": ["Meat", "Spicy"], "image": "/image/menu/jerk-bowl.jpg" },
+        { "name": "Premium Steak Bowl", "desc": "Juicy peppery steak with fresh salsas and guacamole.", "calories": "480 - 830 Cal", "tags": ["Meat"], "image": "/image/menu/steak-bowl.jpg" },
+        { "name": "Organic Tofu Bowl", "desc": "Seasoned organic tofu with fajita veggies and beans.", "calories": "250 - 640 Cal", "tags": ["Veggie", "Vegan"], "image": "/image/menu/tofu-bowl.jpg" },
+        { "name": "Veggie Guac Bowl", "desc": "A hearty bowl of rice, beans, fajita veggies, and a large scoop of fresh guac.", "calories": "250 - 710 Cal", "tags": ["Veggie", "Vegan"], "image": "/image/menu/veggie-bowl.jpg" }
       ]
     },
     {
       "id": "tacos",
       "name": "Tacos",
       "items": [
-        { "name": "Soft Tacos (Set of 3)", "desc": "Choice of protein in flour or corn tortillas with fresh toppings.", "calories": "450 - 780 Cal", "tags": ["Meat", "Veggie"], "image": "/image/menu/tacos.jpg" }
+        { "name": "Grilled Chicken Taco", "desc": "Signature marinated chicken topped with fresh pico de gallo and cheese.", "calories": "210 - 250 Cal", "tags": ["Meat"], "image": "/image/menu/chicken-taco.jpg" },
+        { "name": "Ground Beef Taco", "desc": "Seasoned beef with crisp lettuce, cheese, and sour cream.", "calories": "240 - 280 Cal", "tags": ["Meat"], "image": "/image/menu/beef-taco.jpg" },
+        { "name": "Steak Taco", "desc": "Premium grilled steak with fresh cilantro and diced onions.", "calories": "230 - 270 Cal", "tags": ["Meat"], "image": "/image/menu/steak-taco.jpg" },
+        { "name": "Barbacoa Taco", "desc": "Slow-cooked shredded beef with a smoky adobo flavor.", "calories": "250 - 290 Cal", "tags": ["Meat"], "image": "/image/menu/barbacoa-taco.jpg" },
+        { "name": "Carnitas Taco", "desc": "Tender, slow-roasted pulled pork.", "calories": "260 - 300 Cal", "tags": ["Meat"], "image": "/image/menu/carnitas-taco.jpg" },
+        { "name": "Crispy Fish Taco", "desc": "Battered fish topped with tangy slaw and signature sauce.", "calories": "280 - 320 Cal", "tags": ["Meat"], "image": "/image/menu/fish-taco.jpg" },
+        { "name": "Veggie Guac Taco", "desc": "Fresh hand-smashed guacamole with black beans and corn salsa.", "calories": "190 - 230 Cal", "tags": ["Veggie", "Vegan"], "image": "/image/menu/veggie-taco.jpg" }
       ]
     },
     {
       "id": "quesadillas",
       "name": "Quesadillas",
       "items": [
-        { "name": "Cheese Quesadilla", "desc": "Large flour tortilla with melted signature cheese blend.", "calories": "620 Cal", "tags": ["Veggie"], "image": "/image/menu/cheese-quesadilla.jpg" },
-        { "name": "Protein Quesadilla", "desc": "Melted cheese with your choice of any meat protein.", "calories": "750 - 920 Cal", "tags": ["Meat"], "image": "/image/menu/protein-quesadilla.jpg" }
+        { "name": "Cheese Quesadilla", "desc": "Large flour tortilla with melted signature 3-cheese blend.", "calories": "460 Cal", "tags": ["Veggie"], "image": "/image/menu/cheese-quesadilla.jpg" },
+        { "name": "Chicken Quesadilla", "desc": "Melted cheese with signature marinated grilled chicken.", "calories": "580 - 650 Cal", "tags": ["Meat"], "image": "/image/menu/chicken-quesadilla.jpg" },
+        { "name": "Steak Quesadilla", "desc": "Melted cheese packed with premium peppery steak.", "calories": "610 - 680 Cal", "tags": ["Meat"], "image": "/image/menu/steak-quesadilla.jpg" },
+        { "name": "Veggie Quesadilla", "desc": "Melted cheese with beans and sautéed fajita vegetables.", "calories": "360 - 615 Cal", "tags": ["Veggie"], "image": "/image/menu/veggie-quesadilla.jpg" }
       ]
     },
     {
       "id": "nachos",
       "name": "Nachos",
       "items": [
-        { "name": "Signature Nachos", "desc": "Corn chips topped with beans, cheese sauce, salsa, and sour cream.", "calories": "890 - 1240 Cal", "tags": ["Veggie"], "image": "/image/menu/nachos.jpg" },
-        { "name": "Loaded Meat Nachos", "desc": "Signature nachos topped with your choice of protein.", "calories": "1020 - 1450 Cal", "tags": ["Meat"], "image": "/image/menu/meat-nachos.jpg" }
+        { "name": "Signature Nachos", "desc": "Crispy corn chips topped with cheese sauce, Monterey Jack, and baked to perfection.", "calories": "560 - 890 Cal", "tags": ["Veggie"], "image": "/image/menu/signature-nachos.jpg" },
+        { "name": "Loaded Meat Nachos", "desc": "Signature nachos loaded heavily with your choice of chicken, beef, or steak.", "calories": "820 - 1240 Cal", "tags": ["Meat"], "image": "/image/menu/loaded-nachos.jpg" }
+      ]
+    },
+    {
+      "id": "wings",
+      "name": "Wings",
+      "items": [
+        { "name": "Boneless Chicken Wings", "desc": "Mexican-inspired boneless wings tossed in chipotle BBQ – mild, medium, hot, or suicidal.", "calories": "800 - 1600 Cal", "tags": ["Meat"], "image": "/image/menu/boneless-wings.jpg" }
       ]
     },
     {
       "id": "fries",
       "name": "Fries",
       "items": [
-        { "name": "Classic Fries", "desc": "Crispy golden fries seasoned with sea salt.", "calories": "320 Cal", "tags": ["Vegan", "Gluten-Free"], "image": "/image/menu/fries.jpg" },
-        { "name": "Extreme Fries", "desc": "Fries topped with beef, cheese sauce, and sour cream.", "calories": "680 Cal", "tags": ["Meat"], "image": "/image/menu/extreme-fries.jpg" },
-        { "name": "Mexican Fries", "desc": "Fries topped with salsa, jalapeños, and spicy mayo.", "calories": "450 Cal", "tags": ["Veggie", "Spicy"], "image": "/image/menu/mexican-fries.jpg" }
-      ]
-    },
-    {
-      "id": "sides",
-      "name": "Sides",
-      "items": [
-        { "name": "Chips & Salsa", "desc": "Hand-made corn chips with your choice of salsa.", "calories": "280 Cal", "tags": ["Vegan", "Gluten-Free"], "image": "/image/menu/chips-salsa.jpg" },
-        { "name": "Chips & Guacamole", "desc": "Hand-made corn chips with daily fresh guacamole.", "calories": "350 Cal", "tags": ["Vegan", "Gluten-Free"], "image": "/image/menu/chips-guac.jpg" },
-        { "name": "Extra Guacamole", "desc": "A side of our premium hand-smashed guac.", "calories": "150 Cal", "tags": ["Vegan", "Gluten-Free"], "image": "/image/menu/extra-guac.jpg" }
-      ]
-    },
-    {
-      "id": "drinks-desserts",
-      "name": "Drinks & Desserts",
-      "items": [
-        { "name": "Churros", "desc": "Mexican pastry dusted with cinnamon sugar.", "calories": "220 Cal", "tags": ["Veggie"], "image": "/image/menu/churros.jpg" },
-        { "name": "Bottled Jarritos", "desc": "Authentic Mexican soda in various flavors.", "calories": "110 Cal", "tags": ["Vegan"], "image": "/image/menu/jarritos.jpg" },
-        { "name": "Soft Drinks", "desc": "Assorted canned beverages.", "calories": "0 - 150 Cal", "tags": ["Vegan"], "image": "/image/menu/soda.jpg" }
+        { "name": "Supreme Fries", "desc": "Fries loaded with cheese sauce, tomatoes, corn, chives, and your choice of sauce.", "calories": "715 Cal", "tags": ["Veggie"], "image": "/image/menu/supreme-fries.jpg" },
+        { "name": "Regular Fries", "desc": "Crispy, delicious, golden French fries.", "calories": "580 Cal", "tags": ["Vegan"], "image": "/image/menu/regular-fries.jpg" }
       ]
     },
     {
       "id": "fillings",
       "name": "Fillings",
       "items": [
-        { "name": "Cilantro Lime Rice", "desc": "Zesty white rice with fresh cilantro.", "calories": "210 Cal", "tags": ["Vegan"], "image": "/image/menu/white-rice.jpg" },
-        { "name": "Brown Rice", "desc": "Hearty whole grain rice.", "calories": "190 Cal", "tags": ["Vegan"], "image": "/image/menu/brown-rice.jpg" },
-        { "name": "Black Beans", "desc": "Seasoned and slow-simmered.", "calories": "120 Cal", "tags": ["Vegan"], "image": "/image/menu/black-beans.jpg" },
-        { "name": "Pinto Beans", "desc": "Traditional creamy Mexican beans.", "calories": "130 Cal", "tags": ["Vegan"], "image": "/image/menu/pinto-beans.jpg" }
+        { "name": "Cilantro Lime Rice", "desc": "", "calories": "210 Cal", "tags": ["Vegan"], "image": "/image/menu/white-rice.jpg" },
+        { "name": "Brown Rice", "desc": "", "calories": "190 Cal", "tags": ["Vegan"], "image": "/image/menu/brown-rice.jpg" },
+        { "name": "Black Beans", "desc": "", "calories": "120 Cal", "tags": ["Vegan"], "image": "/image/menu/black-beans.jpg" },
+        { "name": "Pinto Beans", "desc": "", "calories": "130 Cal", "tags": ["Vegan"], "image": "/image/menu/pinto-beans.jpg" },
+        { "name": "Fajita Veggies", "desc": "", "calories": "45 Cal", "tags": ["Vegan"], "image": "/image/menu/fajita-veggies.jpg" }
       ]
     },
     {
       "id": "toppings",
       "name": "Toppings",
       "items": [
-        { "name": "Pico de Gallo", "desc": "Fresh tomato, onion, and cilantro medley.", "calories": "20 Cal", "tags": ["Vegan"], "image": "/image/menu/pico.jpg" },
-        { "name": "Corn Salsa", "desc": "Sweet corn with poblano peppers.", "calories": "80 Cal", "tags": ["Vegan"], "image": "/image/menu/corn-salsa.jpg" },
-        { "name": "Pickled Onions", "desc": "Tangy and bright red onions.", "calories": "10 Cal", "tags": ["Vegan"], "image": "/image/menu/onions.jpg" },
-        { "name": "Shredded Cheese", "desc": "Our signature Monterey Jack blend.", "calories": "110 Cal", "tags": ["Veggie"], "image": "/image/menu/cheese.jpg" }
+        { "name": "Pico de Gallo", "desc": "", "calories": "20 Cal", "tags": ["Vegan"], "image": "/image/menu/pico.jpg" },
+        { "name": "Corn Salsa", "desc": "", "calories": "80 Cal", "tags": ["Vegan"], "image": "/image/menu/corn.jpg" },
+        { "name": "Pickled Onions", "desc": "", "calories": "10 Cal", "tags": ["Vegan"], "image": "/image/menu/onions.jpg" },
+        { "name": "Shredded Cheese", "desc": "", "calories": "110 Cal", "tags": ["Veggie"], "image": "/image/menu/cheese.jpg" },
+        { "name": "Jalapeños", "desc": "", "calories": "5 Cal", "tags": ["Vegan", "Spicy"], "image": "/image/menu/jalapenos.jpg" },
+        { "name": "Sour Cream", "desc": "", "calories": "60 Cal", "tags": ["Veggie"], "image": "/image/menu/sour-cream.jpg" },
+        { "name": "Romaine Lettuce", "desc": "", "calories": "5 Cal", "tags": ["Vegan"], "image": "/image/menu/lettuce.jpg" }
       ]
     },
     {
       "id": "sauces",
-      "name": "Signature Sauces",
+      "name": "Salsas & Sauces",
       "items": [
-        { "name": "Chipotle Mayo", "desc": "Creamy with a smoky heat.", "calories": "90 Cal", "tags": ["Spicy"], "image": "/image/menu/chipotle-mayo.jpg" },
-        { "name": "Burrito Sauce", "desc": "Our secret house specialty.", "calories": "70 Cal", "tags": ["Veggie"], "image": "/image/menu/burrito-sauce.jpg" },
-        { "name": "Garlic Sauce", "desc": "Bold and creamy garlic blend.", "calories": "80 Cal", "tags": ["Veggie"], "image": "/image/menu/garlic-sauce.jpg" }
+        { "name": "Mild Salsa", "desc": "", "calories": "15 Cal", "tags": ["Vegan"], "image": "/image/menu/mild-salsa.jpg" },
+        { "name": "Medium Salsa", "desc": "", "calories": "15 Cal", "tags": ["Vegan", "Spicy"], "image": "/image/menu/medium-salsa.jpg" },
+        { "name": "Hot Salsa", "desc": "", "calories": "15 Cal", "tags": ["Vegan", "Spicy"], "image": "/image/menu/hot-salsa.jpg" },
+        { "name": "Chipotle Mayo", "desc": "", "calories": "90 Cal", "tags": ["Spicy"], "image": "/image/menu/chipotle.jpg" },
+        { "name": "Burrito Sauce", "desc": "", "calories": "70 Cal", "tags": ["Veggie"], "image": "/image/menu/burrito-sauce.jpg" },
+        { "name": "Double Cheddar Queso", "desc": "", "calories": "120 Cal", "tags": ["Veggie"], "image": "/image/menu/queso.jpg" }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "Sides",
+      "items": [
+        { "name": "Chips & Guacamole", "desc": "Hand-made corn chips with fresh guac.", "calories": "350 Cal", "tags": ["Vegan"], "image": "/image/menu/chips-guac.jpg" },
+        { "name": "Chips & Queso", "desc": "Corn chips with a side of warm double cheddar queso.", "calories": "410 Cal", "tags": ["Veggie"], "image": "/image/menu/chips-queso.jpg" },
+        { "name": "Chips & Salsa", "desc": "Corn chips with your choice of fresh salsa.", "calories": "280 Cal", "tags": ["Vegan"], "image": "/image/menu/chips-salsa.jpg" },
+        { "name": "Side of Guacamole", "desc": "Individual 4oz side of hand-smashed guac.", "calories": "150 Cal", "tags": ["Vegan"], "image": "/image/menu/side-guac.jpg" }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts",
+      "items": [
+        { "name": "Churros (2 Pcs)", "desc": "Hazelnut chocolate-filled, deep-fried, and tossed in cinnamon sugar.", "calories": "220 Cal", "tags": ["Veggie"], "image": "/image/menu/churros.jpg" },
+        { "name": "Gluten Free Turtle Cheesecake", "desc": "Candied pecans and milk chocolate chunks in a vanilla cheesecake batter.", "calories": "440 Cal", "tags": ["Veggie", "Gluten-Free"], "image": "/image/menu/turtle-cheesecake.jpg" },
+        { "name": "Cookies 'N Cream Cake", "desc": "Chewy brownie layers with cream cheese and broken OREO cookies.", "calories": "730 Cal", "tags": ["Veggie"], "image": "/image/menu/oreo-cake.jpg" },
+        { "name": "So Good Chocolate Cake", "desc": "Four layers of decadent chocolate cake with rich fudge icing.", "calories": "860 Cal", "tags": ["Veggie"], "image": "/image/menu/chocolate-cake.jpg" },
+        { "name": "Vegan Carrot Cake", "desc": "Colossal Carrot Cake with a plant-based, oh-so-creamy icing.", "calories": "450 Cal", "tags": ["Vegan", "Gluten-Free"], "image": "/image/menu/carrot-cake.jpg" }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "Drinks",
+      "items": [
+        { "name": "Jarritos Mexican Soda", "desc": "Authentic glass bottle Mexican sodas.", "calories": "110 Cal", "tags": ["Vegan"], "image": "/image/menu/jarritos.jpg" },
+        { "name": "Eska Spring Water", "desc": "Pure, refreshing natural spring water.", "calories": "0 Cal", "tags": ["Vegan"], "image": "/image/menu/water.jpg" },
+        { "name": "Canned Pop", "desc": "Assorted flavors of classic soft drinks.", "calories": "150 Cal", "tags": ["Vegan"], "image": "/image/menu/soda.jpg" }
       ]
     }
   ]
