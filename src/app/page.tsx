@@ -2,6 +2,7 @@ import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import menuData from "@/data/menu.json";
 import Image from 'next/image';
+import StoreStatus from '@/components/StoreStatus';
 
 export default function Home() {
   const featuredItems = menuData.categories[0].items.slice(0, 4);
@@ -22,12 +23,15 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-20 text-center px-6">
-          <span className="text-orange-500 font-bold uppercase tracking-[0.3em] text-sm mb-4 block">
-            The Best in Town
+        <div className="relative z-20 text-center max-w-4xl mx-auto px-6">
+          <div className="flex justify-center mb-6">
+             <StoreStatus /> 
+          </div>
+          <span className="text-orange-400 font-bold uppercase tracking-[0.3em] text-sm md:text-base">
+            {siteConfig.slogan || "The Best in Town"}
           </span>
-          <h1 className="text-6xl md:text-9xl font-black text-white uppercase italic leading-[0.8] tracking-tighter">
-            Roll <br /> <span className="text-orange-600 italic">With</span> Us
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white uppercase italic leading-tight mt-4">
+            Wrap. Roll. Devour.
           </h1>
           <p className="mt-8 text-white/90 text-lg md:text-xl font-light max-w-xl mx-auto uppercase tracking-wide">
             {siteConfig.name} — Handcrafted burritos that hit different.
@@ -42,6 +46,41 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
+      {/* QUICK ACTIONS BAR */}
+<section className="bg-orange-600 py-4">
+  <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16">
+    
+    {/* Action 1: Directions */}
+    <a 
+      href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(siteConfig.location.address)}`}
+      target="_blank"
+      className="flex items-center gap-3 text-white hover:text-black transition-colors group"
+    >
+      <div className="bg-white/20 p-2 rounded-lg group-hover:bg-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:text-orange-600"><path d="m20 12-8 8-8-8"/><path d="M12 2v18"/></svg>
+      </div>
+      <span className="font-black uppercase tracking-widest text-sm">Get Directions</span>
+    </a>
+
+    {/* Action 2: Call for Pickup */}
+    <a 
+      href={`tel:${siteConfig.contact.raw}`}
+      className="flex items-center gap-3 text-white hover:text-black transition-colors group"
+    >
+      <div className="bg-white/20 p-2 rounded-lg group-hover:bg-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:text-orange-600"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <span className="font-black uppercase tracking-widest text-sm">Call for Pickup</span>
+    </a>
+
+  </div>
+</section>
+
+
+
+
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
@@ -51,7 +90,7 @@ export default function Home() {
                 Most Loved <span className="italic font-light text-gray-400">Wraps</span>
               </h2>
             </div>
-            <Link href="/menu" className="text-sm font-bold uppercase border-b-2 border-orange-600 pb-1 hover:text-orange-600 transition-colors">
+            <Link href="/menu" className="text-gray-400 text-sm font-bold uppercase border-b-2 border-orange-600 pb-1 hover:text-orange-600 transition-colors">
               View Full Menu
             </Link>
           </div>
@@ -113,7 +152,7 @@ export default function Home() {
           {/* Card 2 */}
           <div className="group cursor-pointer md:mt-12">
             <div className="h-[450px] overflow-hidden rounded-3xl bg-gray-100 mb-6">
-              <img src="/image/featured-burrito.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Bowls" />
+              <img src="/image/featured-burrito02.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Bowls" />
             </div>
             <h3 className="text-2xl font-black uppercase italic">Loaded Bowls</h3>
             <p className="text-gray-500 mt-2">Everything you love, without the wrap.</p>
@@ -121,7 +160,7 @@ export default function Home() {
           {/* Card 3 */}
           <div className="group cursor-pointer">
             <div className="h-[450px] overflow-hidden rounded-3xl bg-gray-100 mb-6">
-              <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=1000" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Sides" />
+              <img src="/image/featured-burrito03.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Sides" />
             </div>
             <h3 className="text-2xl font-black uppercase italic">Craveable Sides</h3>
             <p className="text-gray-500 mt-2">From hand-smashed guac to spicy fries.</p>
@@ -215,6 +254,7 @@ export default function Home() {
     </div>
   </div>
 </section>
+
     </main>
   );
 }

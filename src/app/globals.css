@@ -33,3 +33,18 @@ body {
     scrollbar-width: none;
   }
 }
+@layer base {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ea580c; /* Your orange-600 color */
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+  }
+}

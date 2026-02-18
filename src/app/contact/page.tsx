@@ -16,23 +16,24 @@ export default function ContactPage() {
     setState({ ...state, submitting: true });
 
     const form = e.currentTarget;
-    const data = new FormData(form);
+    const formData = new FormData(form);
+    const name = formData.get("name")?.toString() || "";
+    const email = formData.get("email")?.toString() || "";
+    const message = formData.get("message")?.toString() || "";
     
-    // REPLACE 'your_form_id' with the ID you got from Formspree
-    const response = await fetch("https://formspree.io/f/your_form_id", {
-      method: "POST",
-      body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
+    // Construct WhatsApp URL
+    const phoneNumber = raw.replace(/[^0-9]/g, "");
+    // Use encodeURIComponent to handle special characters and line breaks properly
+    const text = `Hello Team,\n\n${message}\n\nThank you\n${name}\n${email}`;
+    const whatsappUrl = `https://wa.me/${siteConfig.contact.raw}/?text=${encodeURIComponent(text)}`;
 
-    if (response.ok) {
-      setState({ submitting: false, succeeded: true, errors: [] });
-      form.reset();
-    } else {
-      setState({ ...state, submitting: false, succeeded: false });
-    }
+    // Redirect to WhatsApp (using location.href avoids popup blockers)
+    console.log("Redirecting to:", whatsappUrl);
+    window.location.href = whatsappUrl;
+
+    // Show success message
+    setState({ submitting: false, succeeded: true, errors: [] });
+    form.reset();
   }
   return (
     <main className="py-24 px-6 max-w-7xl mx-auto">
@@ -103,13 +104,10 @@ export default function ContactPage() {
                 <textarea required name="message" rows={4} placeholder="How can we help?" className="w-full p-4 rounded-xl border border-gray-200 focus:outline-orange-600 font-bold text-sm uppercase text-gray-900 bg-white"></textarea>
               </div>
 
-              <button 
-                type="submit" 
-                disabled={state.submitting}
-                className="w-full bg-black text-white py-4 rounded-full font-black uppercase tracking-widest hover:bg-orange-600 transition-colors disabled:bg-gray-400"
-              >
-                {state.submitting ? "Sending..." : "Send Message"}
-              </button>
+              <button type="submit" className="w-full bg-[#25D366] text-white py-4 rounded-full font-black uppercase tracking-widest hover:bg-black transition-colors flex items-center justify-center gap-2">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.48 5.228 3.48 8.404c0 6.556-5.332 11.888-11.888 11.888-2.013 0-3.987-.512-5.728-1.487l-6.26 1.712zm6.106-4.221l.44.262c1.46.868 3.141 1.326 4.864 1.326 5.201 0 9.432-4.231 9.432-9.432s-4.231-9.432-9.432-9.432-9.432 4.231-9.432 9.432c0 1.916.58 3.788 1.678 5.372l.291.423-1.002 3.655 3.731-.975z"/></svg>
+              Chat on WhatsApp
+            </button>
             </form>
           ) : (
             <div className="text-center py-12 animate-in fade-in zoom-in duration-500">
