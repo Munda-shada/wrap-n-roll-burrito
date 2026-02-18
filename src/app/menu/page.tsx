@@ -107,8 +107,21 @@ export default function MenuPage() {
   return (
     <main className="min-h-screen bg-[#FBFBF9] pb-24">
       
+      {/* HERO SECTION */}
+      <div className="bg-gray-900 text-white py-12 px-6 lg:py-24 relative overflow-hidden">
+        <div className="text-center max-w-4xl mx-auto relative z-10">
+          <p className="text-orange-500 font-bold uppercase tracking-widest text-[10px] lg:text-sm mb-3 lg:mb-6">Taste the Difference</p>
+          <h1 className="text-5xl lg:text-8xl font-black uppercase italic tracking-tighter leading-none mb-6">
+            Our <span className="text-orange-600">Menu</span>
+          </h1>
+          <p className="hidden lg:block text-gray-400 text-xl font-medium max-w-2xl mx-auto leading-relaxed">
+            Fresh ingredients, bold flavors, and recipes perfected over generations. Dig into our selection of handcrafted burritos and bowls.
+          </p>
+        </div>
+      </div>
+
       {/* MOBILE TOP NAV (lg:hidden) */}
-      <div className="lg:hidden sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-gray-100 pt-20">
+      <div className="lg:hidden sticky top-16 z-40 bg-white/95 backdrop-blur-xl border-b border-gray-100">
         <div className="px-6 py-4">
           <div className="flex items-center justify-between mb-4">
             <h1 className="text-2xl font-black uppercase italic">Menu</h1>
@@ -130,13 +143,13 @@ export default function MenuPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16 mt-8 lg:mt-32">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16 mt-8 lg:mt-20">
         
         {/* DESKTOP SIDEBAR (hidden lg:block) */}
         <aside className="hidden lg:block lg:w-64 flex-shrink-0 z-30 sticky top-32 self-start h-fit">
-          <h1 className="text-6xl font-black uppercase italic tracking-tighter leading-none mb-10">
-            The <span className="text-orange-600">Menu</span>
-          </h1>
+          <div className="mb-6 pb-6 border-b border-gray-200">
+             <p className="text-xs font-black uppercase text-gray-900 tracking-widest">Categories</p>
+          </div>
           <nav className="space-y-2">
             {menuData.categories.map((cat) => (
               <button
