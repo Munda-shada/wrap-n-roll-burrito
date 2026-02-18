@@ -179,7 +179,7 @@ export default function MenuPage() {
                 return (
                   <section key={category.id} id={category.id} className="scroll-mt-48 lg:scroll-mt-32">
                     <div className="mb-12">
-                      <h2 className="text-3xl lg:text-4xl font-black uppercase italic tracking-tight">{category.name}</h2>
+                      <h2 className="text-3xl lg:text-4xl font-black uppercase italic tracking-tight text-orange-600">{category.name}</h2>
                       <div className="h-1 w-12 bg-orange-600 mt-2"></div>
                     </div>
                     
@@ -190,7 +190,7 @@ export default function MenuPage() {
                           <div className={`relative mb-6 bg-gray-100 rounded-3xl overflow-hidden ${isTopping ? 'aspect-square' : 'aspect-video'}`}>
                              <Image src={item.image} alt={item.name} fill className="..." />
                           </div> */}
-                          <h3 className={`font-black uppercase tracking-tight mb-2 ${isTopping ? 'text-xs' : 'text-2xl'}`}>{item.name}</h3>
+                          <h3 className={`font-black uppercase tracking-tight mb-2 text-gray-900 ${isTopping ? 'text-xs' : 'text-2xl'}`}>{item.name}</h3>
                           {!isTopping && <p className="text-gray-500 text-sm leading-relaxed mb-6 font-medium">{item.desc}</p>}
                           <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-50">
                             <span className="text-[8px] font-black px-2 py-1 bg-black text-white rounded uppercase">{item.tags[0]}</span>
