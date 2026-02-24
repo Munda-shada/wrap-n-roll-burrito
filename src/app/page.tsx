@@ -1,3 +1,5 @@
+"use client";
+import { useState, useEffect } from "react";
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import menuData from "@/data/menu.json";
@@ -5,12 +7,26 @@ import Image from 'next/image';
 import StoreStatus from '@/components/StoreStatus';
 
 export default function Home() {
-  const featuredItems = menuData.categories[0].items.slice(0, 4);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const burritos = menuData.categories[0].items;
+  const featuredItems = [
+    { ...burritos.find(i => i.tags.includes("Meat") && !i.tags.includes("Spicy")), badge: "Best Seller", badgeColor: "bg-orange-100 text-orange-700" },
+    { ...burritos.find(i => i.tags.includes("Spicy")), badge: "Spicy Hit", badgeColor: "bg-red-100 text-red-700" },
+    { ...burritos.find(i => i.name.includes("Steak")), badge: "Premium Pick", badgeColor: "bg-purple-100 text-purple-700" },
+    { ...burritos.find(i => i.tags.includes("Veggie")), badge: "Fresh & Light", badgeColor: "bg-green-100 text-green-700" }
+  ].filter((item) => item.name);
+
   const { address, getMapEmbedUrl } = siteConfig.location;
   return (
     <main className="min-h-screen bg-white">
       {/* 1. PREMIUM HERO SECTION */}
-      <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden">
+      <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-gray-900">
         {/* Background Image with Parallax-like feel */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40 z-10" /> {/* Dark Overlay */}
@@ -96,11 +112,30 @@ export default function Home() {
           </div>
 
           <div className="flex overflow-x-auto gap-6 pb-8 snap-x no-scrollbar">
-            {featuredItems.map((item, i) => (
-              <div key={i} className="min-w-[300px] bg-white rounded-[2rem] p-8 shadow-sm border border-gray-100 snap-center hover:shadow-xl transition-all duration-500 group">
+            {isLoading ? (
+              Array.from({ length: 4 }).map((_, i) => (
+                <div key={i} className="min-w-[300px] bg-white rounded-[2rem] p-8 shadow-sm border border-gray-100 snap-center animate-pulse">
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="h-6 w-24 bg-gray-200 rounded-full"></div>
+                    <div className="h-6 w-8 bg-gray-200 rounded-full"></div>
+                  </div>
+                  <div className="h-8 w-3/4 bg-gray-200 rounded-lg mb-4"></div>
+                  <div className="space-y-2 mb-8">
+                    <div className="h-4 w-full bg-gray-200 rounded"></div>
+                    <div className="h-4 w-5/6 bg-gray-200 rounded"></div>
+                  </div>
+                  <div className="pt-6 border-t border-gray-50 flex justify-between items-center">
+                    <div className="h-8 w-20 bg-gray-200 rounded-lg"></div>
+                    <div className="h-12 w-12 bg-gray-200 rounded-full"></div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              featuredItems.map((item, i) => (
+              <div key={i} className="min-w-[300px] bg-white rounded-[2rem] p-8 shadow-sm border border-gray-100 snap-center hover:shadow-xl transition-all duration-500 group flex flex-col">
                 <div className="flex justify-between items-start mb-6">
-                  <div className="bg-orange-100 text-orange-700 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">
-                    Best Seller
+                  <div className={`text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter ${item.badgeColor}`}>
+                    {item.badge}
                   </div>
                   <span className="text-xl font-mono font-bold text-gray-400">0{i + 1}</span>
                 </div>
@@ -108,20 +143,21 @@ export default function Home() {
                 <h3 className="text-2xl font-black text-gray-900 leading-tight">
                   {item.name}
                 </h3>
-                <p className="text-gray-500 text-sm mt-3 line-clamp-2">
+                <p className="text-gray-500 text-sm mt-3 mb-8 line-clamp-2">
                   {item.desc}
                 </p>
                 
-                <div className="mt-8 pt-6 border-t border-gray-50 flex justify-between items-center">
+                <div className="mt-auto pt-6 border-t border-gray-50 flex justify-between items-center">
                   <span className="text-2xl font-black text-orange-600">
-                    {item.calories || "N/A"} {/* Showing the 'Full' price */}
+                    {item.protein || "N/A"} {/* Showing the 'Full' price */}
                   </span>
                   <Link href="/order" className="bg-gray-900 text-white p-3 rounded-full group-hover:bg-orange-600 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   </Link>
                 </div>
               </div>
-            ))}
+            ))
+            )}
           </div>
         </div>
       </section>

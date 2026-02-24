@@ -82,7 +82,10 @@ export default function Footer() {
 
         {/* Bottom Copyright */}
         <div className="pt-8 border-t border-gray-800 text-center text-gray-500 text-xs uppercase tracking-widest font-bold">
-          &copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.
+          <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.</p>
+          <p className="mt-2">
+            Developed by <a href="https://www.linkedin.com/in/dinesh-godara" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition-colors">Dinesh Godara</a>
+          </p>
         </div>
       </div>
     </footer>

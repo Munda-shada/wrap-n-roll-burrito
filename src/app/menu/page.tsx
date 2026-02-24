@@ -277,11 +277,17 @@ export default function MenuPage() {
                             {item.tags.includes("Gluten-Free") && <span className="ml-2" role="img" aria-label="Gluten-Free">🌾</span>}
                           </h3>
                           {!isTopping && <p className="text-gray-500 text-sm leading-relaxed mb-6 font-medium">{item.desc}</p>}
-                          <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-50">
-                            <div className="flex flex-wrap gap-1">
-                              {item.tags.map((tag: string, i: number) => <span key={i} className="text-[8px] font-black px-2 py-1 bg-black text-white rounded uppercase">{tag}</span>)}
+                          <div className="mt-auto pt-4 border-t border-gray-50">
+                            <div className="flex justify-between items-center mb-2">
+                                <span className={`${isTopping ? 'text-sm' : 'text-lg'} font-black text-gray-900`}>{item.price}</span>
+                                <div className="flex flex-wrap gap-1">
+                                  {item.tags.map((tag: string, i: number) => <span key={i} className="text-[8px] font-black px-2 py-1 bg-black text-white rounded uppercase">{tag}</span>)}
+                                </div>
                             </div>
-                            <span className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">{item.calories}</span>
+                            <div className="flex justify-between items-center">
+                                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{item.calories}</span>
+                                {item.protein && <span className="text-[10px] font-bold text-orange-600 uppercase tracking-widest">{item.protein}</span>}
+                            </div>
                           </div>
                         </div>
                       ))}
