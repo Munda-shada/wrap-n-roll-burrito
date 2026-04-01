@@ -253,7 +253,7 @@ export default function MenuPage() {
               {visibleCategories.map((category) => {
                 const filteredItems = category.items.filter(checkItemMatches);
                 if (filteredItems.length === 0) return null;
-                const isTopping = ["fillings", "toppings", "sauces"].includes(category.id);
+                const isTopping = ["extras", "drinks", "sides"].includes(category.id);
 
                 return (
                   <section key={category.id} id={category.id} className="scroll-mt-48 lg:scroll-mt-32">
@@ -278,9 +278,20 @@ export default function MenuPage() {
                           </h3>
                           {!isTopping && <p className="text-gray-500 text-sm leading-relaxed mb-6 font-medium">{item.desc}</p>}
                           <div className="mt-auto pt-4 border-t border-gray-50">
-                            <div className="flex justify-between items-center mb-2">
-                                <span className={`${isTopping ? 'text-sm' : 'text-lg'} font-black text-gray-900`}>{item.price}</span>
-                                <div className="flex flex-wrap gap-1">
+                          <div className="flex justify-between items-end mb-3">
+                              {typeof item.price === 'object' && item.price !== null ? (
+                                <div className="flex gap-4">
+                                  {Object.entries(item.price).map(([size, price]) => (
+                                    <div key={size} className="flex flex-col">
+                                      <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1">{size}</span>
+                                      <span className="text-lg font-black text-gray-900 leading-none">{String(price)}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : (
+                                <span className={`${isTopping ? 'text-sm' : 'text-lg'} font-black text-gray-900 leading-none`}>{item.price}</span>
+                              )}
+                              <div className="flex flex-wrap gap-1 pb-0.5">
                                   {item.tags.map((tag: string, i: number) => <span key={i} className="text-[8px] font-black px-2 py-1 bg-black text-white rounded uppercase">{tag}</span>)}
                                 </div>
                             </div>
