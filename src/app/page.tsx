@@ -16,11 +16,15 @@ export default function Home() {
 
   const burritos = menuData.categories[0].items;
   const featuredItems = [
-    { ...burritos.find(i => i.tags.includes("Meat") && !i.tags.includes("Spicy")), badge: "Best Seller", badgeColor: "bg-orange-100 text-orange-700" },
-    { ...burritos.find(i => i.tags.includes("Spicy")), badge: "Spicy Hit", badgeColor: "bg-red-100 text-red-700" },
-    { ...burritos.find(i => i.name.includes("Steak")), badge: "Premium Pick", badgeColor: "bg-purple-100 text-purple-700" },
-    { ...burritos.find(i => i.tags.includes("Veggie")), badge: "Fresh & Light", badgeColor: "bg-green-100 text-green-700" }
-  ].filter((item) => item.name);
+    burritos.find(i => i.tags.includes("Meat") && !i.tags.includes("Spicy")),
+    burritos.find(i => i.tags.includes("Spicy")),
+    burritos.find(i => i.name.includes("Steak")),
+    burritos.find(i => i.tags.includes("Veggie"))
+  ].filter((item): item is typeof burritos[0] => item !== undefined).map((item, idx) => {
+    const badges = ["Best Seller", "Spicy Hit", "Premium Pick", "Fresh & Light"];
+    const badgeColors = ["bg-orange-100 text-orange-700", "bg-red-100 text-red-700", "bg-purple-100 text-purple-700", "bg-green-100 text-green-700"];
+    return { ...item, badge: badges[idx], badgeColor: badgeColors[idx] };
+  });
 
   const { address, getMapEmbedUrl } = siteConfig.location;
   return (
