@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "WrapsNRollBurrito",
   description: "Authentic Burritos & Wraps",
-  phone: "+1 905-555-5555", // Replace with your actual number
+  phone: "+1 905-806-9503", // Replace with your actual number
   slogan: "The Best in Town",
   location: {
     address: "15958 Airport Rd, Caledon East, ON L7C 1K5 Canada",
@@ -18,8 +18,8 @@ export const siteConfig = {
     twitter: "https://twitter.com/wrapsnroll",
   },
   contact: {
-    display: "+1 (905) 555-0123", // How it looks on screen
-    raw: "+19055550123"           // No spaces/brackets for the dialer
+    display: "+1 (905) 806-9503", // How it looks on screen
+    raw: "+19058069503",         // No spaces/brackets for the dialer
   },
   deliveryLinks: {
     uberEats: "https://www.ubereats.com/store/your-store-link",
